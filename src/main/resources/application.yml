@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: dev,db,log4j2
+#访问路径http://localhost:9080/wjw/cxfServices/aaaa?wsdl
+cxf:
+  path: /cxfServices
