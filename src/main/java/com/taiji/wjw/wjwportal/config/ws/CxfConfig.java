@@ -4,6 +4,8 @@ import com.taiji.wjw.wjwportal.ws.UserWsService;
 import org.apache.cxf.Bus;
 import org.apache.cxf.jaxws.EndpointImpl;
 import org.apache.cxf.transport.servlet.CXFServlet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -17,6 +19,7 @@ import javax.xml.ws.Endpoint;
 @Configuration
 public class CxfConfig {
 
+    private Logger logger = LoggerFactory.getLogger(CxfConfig.class);
     @Autowired
     private Bus bus;
 
@@ -32,6 +35,7 @@ public class CxfConfig {
     @Bean
     public Endpoint userWsServiceEndpoint(){
         EndpointImpl endpoint = new EndpointImpl(bus,userWsService);
+        logger.info("调用ws接口");
         endpoint.publish("/aaaa");
         return endpoint;
     }
