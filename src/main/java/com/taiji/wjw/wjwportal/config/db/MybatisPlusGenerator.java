@@ -18,7 +18,7 @@ import java.util.*;
  * Simple to Introduction
  * className: MybatisPlusConfig
  *
- * @author yanxw
+ * @author zhw
  * @version 2019/4/15 13:56
  */
 

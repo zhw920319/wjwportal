@@ -13,7 +13,8 @@ public class HelloController {
 
     @RequestMapping("hello")
     @ResponseBody
-    public void hello() {
+    public String hello() {
         logger.info("hello");
+        return "hello";
     }
 }
